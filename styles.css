@@ -92,6 +92,23 @@
   background-color: #eab308;
 }
 
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.pt-\[80px\] {
+  padding-top: 80px;
+}
+
 .logo {
     font-size: 1.25rem;
     letter-spacing: 0.05em;
