@@ -23,7 +23,6 @@
   padding: 0 clamp(1rem, 5vw, 4rem);
 }
 
-/* Logo */
 .logo {
   font-size: 1.25rem;
   letter-spacing: 0.05em;
@@ -34,7 +33,6 @@
   gap: 0.25rem;
 }
 
-/* Keskellä nav */
 .nav-center {
   display: flex;
   gap: 2rem;
@@ -49,12 +47,10 @@
   transition: color 0.3s;
 }
 
-/* Hover-efekti kaikille keskellä linkeille */
 .nav-center a:hover {
   color: #facc15;
 }
 
-/* Yhteystiedot erikoisena border-nappina */
 .nav-center a.border {
   border-radius: 9999px;
   padding: 0.5rem 1rem;
@@ -85,7 +81,7 @@
 
 .signup-btn {
   padding: 0.5rem 1rem;
-  background-color: #facc15;
+  background-color: #FF8C00;
   color: black;
   border-radius: 9999px;
   font-weight: 600;
