@@ -23,34 +23,77 @@
   padding: 0 clamp(1rem, 5vw, 4rem);
 }
 
+/* Logo */
 .logo {
   font-size: 1.25rem;
   letter-spacing: 0.05em;
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.header-container nav a {
+/* Keskellä nav */
+.nav-center {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.nav-center a {
   color: white;
   text-decoration: none;
-  margin-left: 1rem;
   transition: color 0.3s;
 }
 
-.header-container nav a:hover {
-  color: #facc15; 
+/* Hover-efekti kaikille keskellä linkeille */
+.nav-center a:hover {
+  color: #facc15;
 }
 
-.header-container nav a.border {
+/* Yhteystiedot erikoisena border-nappina */
+.nav-center a.border {
   border-radius: 9999px;
   padding: 0.5rem 1rem;
   border: 1px solid white;
   transition: all 0.3s;
 }
 
-.header-container nav a.border:hover {
+.nav-center a.border:hover {
   background-color: white;
   color: black;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #facc15;
+}
+
+.signup-btn {
+  padding: 0.5rem 1rem;
+  background-color: #facc15;
+  color: black;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #eab308;
 }
 
 .logo {
