@@ -307,19 +307,6 @@ body {
 .text-content p {
     color: #065f46;
 }
-.hover-scale:hover { 
-    transform: scale(1.02); 
-}
-
-.featured-scale { 
-    transform: scale(1.05); 
-}
-
-@media (max-width: 768px) {
-    .featured-scale { 
-        transform: scale(1); 
-    }
-}
 
 @media (max-width: 1024px) {
     .site-header {
