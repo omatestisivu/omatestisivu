@@ -257,56 +257,91 @@ body {
     }
 }
 
-.benefits-section {
-    padding: 4rem 1rem;
-    max-width: 1200px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    padding: 60px 20px;
+}
+
+section.container {
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.tech-intro-text {
-    font-size: 2rem;
-    font-weight: bold;
+header.header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 50px;
 }
 
-.benefits-grid {
+header.header span {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    margin-bottom: 16px;
+}
+
+div.benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
 }
 
-.benefit-item {
-    background-color: #f0fdf4;
-    padding: 2rem;
-    border-radius: 1.5rem;
+article.card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    border: 2px solid #10b981;
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    box-shadow: 8px 8px 0px #10b981;
 }
 
-.icon-circle {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 9999px;
-    background-color: #10b981;
-    color: white;
-    font-weight: bold;
+article.card .icon-wrapper {
+    margin-bottom: 24px;
+    display: flex;
+}
+
+article.card .icon-circle {
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    border-radius: 8px;
+    background: #10b981;
+    color: #ffffff;
+    border: 2px solid #10b981;
 }
 
-.text-content h3 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+article.card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #000000;
+    letter-spacing: -0.01em;
 }
 
-.text-content p {
-    color: #065f46;
+article.card p {
+    font-size: 15px;
+    color: #333333;
+    font-weight: 500;
 }
+
 
 @media (max-width: 1024px) {
     .site-header {
