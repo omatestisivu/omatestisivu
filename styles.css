@@ -1,10 +1,6 @@
 body {
     background-color: #ffffff;
-    color: #000000;
-    margin: 0;
-    padding: 0;
 }
-
 .bar {
     display: block;
     width: 25px;
@@ -825,4 +821,8 @@ body {
 
 .hero-section ~ section {
   margin-top: 5rem;
+}
+
+section {
+    background-color: #ffffff;
 }
