@@ -218,7 +218,7 @@ body {
 .section-divider {
   width: 100%;
   height: 2px;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   margin: 1.5rem 0;
 }
 
@@ -229,7 +229,7 @@ body {
 body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  background: #f1f5f9;
+  background: ffffff;
 }
 
 .tech-intro-text {
@@ -343,15 +343,9 @@ header.header span {
 
 .benefits-section {
     padding: 60px 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     text-align: center;
     font-family: 'Arial', sans-serif;
-}
-
-.benefits-section .tech-intro-text {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #333;
 }
 
 .benefits-grid {
