@@ -809,3 +809,7 @@ body {
             justify-content: center;
         }
     }
+
+.spacer {
+    height: 16px;
+}
