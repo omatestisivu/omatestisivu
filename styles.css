@@ -1,6 +1,3 @@
-body {
-    background-color: #ffffff;
-}
 .bar {
     display: block;
     width: 25px;
@@ -812,11 +809,3 @@ body {
             justify-content: center;
         }
     }
-
-.hero-section ~ section {
-  margin-top: 5rem;
-}
-
-section {
-    background-color: #ffffff;
-}
