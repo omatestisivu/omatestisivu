@@ -750,67 +750,27 @@ details[open] summary {
         }
     }
 
-.hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none; /* desktopissa piilotetaan */
-    flex-direction: column;
-    gap: 4px;
-}
+#mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
 
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #333;
-    border-radius: 2px;
-}
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
 
-/* Close icon */
-#close-icon {
-    font-size: 1.5rem;
-}
+        /* Gradient Overlay for Hero */
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        }
 
-/* Piilota menu mobile */
-.nav-center {
-    transition: all 0.4s ease;
-}
-
-@media (max-width: 768px) {
-    .nav-center {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #333;
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    .nav-center a {
-        color: #fff;
-        padding: 1rem 2rem;
-    }
-
-    .nav-center.active {
-        max-height: 500px; /* tarpeeksi korkea */
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .hamburger {
-        display: flex; /* mobiilissa näytetään */
-    }
-}
-
-/* Scroll-lukko */
-.no-scroll {
-    overflow: hidden;
-}
+        /* Hamburger Animation */
+        .hamburger-line {
+            transition: all 0.3s ease-in-out;
+        }
+        .open .line-1 { transform: rotate(45deg) translate(5px, 5px); }
+        .open .line-2 { opacity: 0; }
+        .open .line-3 { transform: rotate(-45deg) translate(7px, -6px); }
 
         .section-card {
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
