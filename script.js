@@ -71,4 +71,6 @@ window.addEventListener('resize', () => {
         closeIcon.classList.add('hidden');
         menuBtn.setAttribute('aria-expanded', false);
     }
+
+            document.body.classList.toggle('no-scroll', isOpen);
 });
