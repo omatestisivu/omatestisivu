@@ -22,4 +22,10 @@ window.addEventListener('load', () => {
     }
 
     lucide.createIcons();
+
+    const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-center");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
 });
