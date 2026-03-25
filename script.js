@@ -55,4 +55,12 @@ window.addEventListener('resize', () => {
         menuIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
     }
+
+    menuBtn.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('active');
+
+    menuBtn.setAttribute('aria-expanded', isOpen);
+
+    menuIcon.classList.toggle('hidden', isOpen);
+    closeIcon.classList.toggle('hidden', !isOpen);
 });
