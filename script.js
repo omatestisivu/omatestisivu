@@ -73,4 +73,10 @@ window.addEventListener('resize', () => {
     }
 
             document.body.classList.toggle('no-scroll', isOpen);
-});
+
+            navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
