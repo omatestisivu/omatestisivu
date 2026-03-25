@@ -750,44 +750,64 @@ details[open] summary {
         }
     }
 
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* desktopissa piilotetaan */
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+}
+
+/* Close icon */
+#close-icon {
+    font-size: 1.5rem;
+}
+
+/* Piilota menu mobile */
 .nav-center {
     transition: all 0.4s ease;
-    max-height: none;
 }
 
 @media (max-width: 768px) {
     .nav-center {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #333;
+        flex-direction: column;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         transform: translateY(-10px);
     }
 
+    .nav-center a {
+        color: #fff;
+        padding: 1rem 2rem;
+    }
+
     .nav-center.active {
-        max-height: 400px;
+        max-height: 500px; /* tarpeeksi korkea */
         opacity: 1;
         transform: translateY(0);
     }
+
+    .hamburger {
+        display: flex; /* mobiilissa näytetään */
+    }
 }
 
-.hidden {
-    display: none !important;
-}
-
-#page-wrapper {
-    transition: max-width 0.4s ease;
-    margin: 0 auto;
-}
-
-.mobile-view {
-    max-width: 375px !important;
-    border: 8px solid #333;
-    border-radius: 40px;
-    height: 80vh;
-    overflow-y: auto;
-    margin-top: 20px;
-}
-
+/* Scroll-lukko */
 .no-scroll {
     overflow: hidden;
 }
