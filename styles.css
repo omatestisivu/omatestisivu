@@ -218,10 +218,14 @@
     height: clamp(40px, 5vw, 80px);
 }
 
-.section-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-}
+        .section-card {
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, box-shadow;
+        }
+
+              transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
 
 .icon-container {
  transition: transform 0.3s ease;
@@ -234,14 +238,9 @@
 .card-header {
             transition: filter 0.3s ease;
         }
-
-.card-header {
-    transition: filter 0.3s ease;
-}
-
+        
 .section-card:hover .card-header {
-    filter: brightness(1.1);
-}
+            filter: brightness(1.1);
   
   :root {
     --sol-primary: #2563eb;
@@ -286,7 +285,7 @@ body {
 body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  background: #ffffff;
+  background: ffffff;
 }
 
 .tech-intro-text {
@@ -301,7 +300,6 @@ body {
 body { 
     font-family: 'Inter', sans-serif; 
 }
-
 .hover-scale:hover { 
     transform: scale(1.02); 
     transition: transform 0.3s ease;
