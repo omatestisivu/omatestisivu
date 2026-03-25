@@ -63,4 +63,12 @@ window.addEventListener('resize', () => {
 
     menuIcon.classList.toggle('hidden', isOpen);
     closeIcon.classList.toggle('hidden', !isOpen);
+
+        document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', false);
+    }
 });
