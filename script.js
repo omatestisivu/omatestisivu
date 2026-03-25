@@ -14,51 +14,25 @@ if (marquee) {
     animateMarquee();
 }
 
-const menuBtn = document.getElementById('menu-btn');
-const navMenu = document.getElementById('nav-menu');
-const menuIcon = document.getElementById('menu-icon');
-const closeIcon = document.getElementById('close-icon');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const body = document.body;
 
-// Toggle menu
-menuBtn.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('active');
+        menuBtn.addEventListener('click', () => {
+            // Animoi hampurilaiskuvake
+            menuBtn.classList.toggle('open');
+            // Näytä/piilota valikko
+            mobileMenu.classList.toggle('open');
+            // Estä scrollaus kun valikko on auki
+            body.classList.toggle('overflow-hidden');
+        });
 
-    menuIcon.classList.toggle('hidden', isOpen);
-    closeIcon.classList.toggle('hidden', !isOpen);
-
-    menuBtn.setAttribute('aria-expanded', isOpen);
-    document.body.classList.toggle('no-scroll', isOpen);
-});
-
-// Sulje menu klikkaamalla linkkiä
-navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        document.body.classList.remove('no-scroll');
-        menuBtn.setAttribute('aria-expanded', false);
-    });
-});
-
-// Sulje menu klikkaamalla muualle
-document.addEventListener('click', (e) => {
-    if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        document.body.classList.remove('no-scroll');
-        menuBtn.setAttribute('aria-expanded', false);
-    }
-});
-
-// Palauta desktop-näkymä resize
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        navMenu.classList.remove('active');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        document.body.classList.remove('no-scroll');
-        menuBtn.setAttribute('aria-expanded', false);
-    }
-});
+        // Sulje valikko jos linkkiä klikataan
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                body.classList.remove('overflow-hidden');
+            });
+        });
