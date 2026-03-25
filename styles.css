@@ -756,7 +756,7 @@ details[open] summary {
     cursor: pointer;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
 
     .hamburger {
         display: flex;
@@ -781,7 +781,7 @@ details[open] summary {
     }
 
     .nav-right {
-        display: none;
+        display: none; 
     }
 }
 
