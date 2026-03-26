@@ -1,18 +1,9 @@
-const marquee = document.querySelector('.tech-marquee-content');
-let scrollAmount = 0;
+window.addEventListener('load', () => {
+    const marquee = document.getElementById('marquee');
+    if (!marquee) return;
 
-function animateMarquee() {
-    scrollAmount -= 1;
-    if (Math.abs(scrollAmount) >= marquee.scrollWidth / 2) {
-        scrollAmount = 0;
-    }
-    marquee.style.transform = `translateX(${scrollAmount}px)`;
-    requestAnimationFrame(animateMarquee);
-}
-
-if (marquee) {
-    animateMarquee();
-}
+    marquee.innerHTML += marquee.innerHTML;
+});
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
