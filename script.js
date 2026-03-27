@@ -8,6 +8,34 @@ window.addEventListener('load', () => {
   marquee.style.width = marquee.scrollWidth + "px";
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const ctaImage = document.querySelector('.cta-image');
+    
+    if (ctaImage) {
+        ctaImage.addEventListener('error', function() {
+            this.src = 'https://via.placeholder.com/600x400/1e293b/ffffff?text=Tuotekuva';
+        });
+    }
+
+    // Nappeiden klikkaustapahtumat (valinnainen)
+    const btnPrimary = document.querySelector('.btn-primary');
+    const btnSecondary = document.querySelector('.btn-secondary');
+
+    if (btnPrimary) {
+        btnPrimary.addEventListener('click', function() {
+            console.log('Get Started -nappia klikattu');
+            // Lisää oma toiminnallisuus tähän
+        });
+    }
+
+    if (btnSecondary) {
+        btnSecondary.addEventListener('click', function() {
+            console.log('Learn More -nappia klikattu');
+            // Lisää oma toiminnallisuus tähän
+        });
+    }
+});
+
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const body = document.body;
