@@ -708,46 +708,59 @@ details[open] summary {
     }
 
 #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(100%);
-        }
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
 
-        #mobile-menu.open {
-            transform: translateX(0);
-        }
+#mobile-menu.open {
+    transform: translateX(0);
+}
 
-        .hero-gradient {
-            background: tausta.jpg;
-        }
+.hero-gradient {
+    background-image: url('tausta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        .hamburger-line {
-            transition: all 0.3s ease-in-out;
-        }
-        .open .line-1 { transform: rotate(45deg) translate(5px, 5px); }
-        .open .line-2 { opacity: 0; }
-        .open .line-3 { transform: rotate(-45deg) translate(7px, -6px); }
+.hamburger-line {
+    transition: all 0.3s ease-in-out;
+}
 
-        .section-card {
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform, box-shadow;
-        }
+.open .line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
 
-              transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
+.open .line-2 {
+    opacity: 0;
+}
+
+.open .line-3 {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.section-card {
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow;
+}
+
+.section-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
 
 .icon-container {
- transition: transform 0.3s ease;
-        }
+    transition: transform 0.3s ease;
+}
 
 .section-card:hover .icon-container {
-            transform: rotate(10deg) scale(1.1);
-        }
+    transform: rotate(10deg) scale(1.1);
+}
 
 .card-header {
-            transition: filter 0.3s ease;
-        }
-        
+    transition: filter 0.3s ease;
+}
+
 .section-card:hover .card-header {
-            filter: brightness(1.1);
-  
+    filter: brightness(1.1);
+}
