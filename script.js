@@ -1,35 +1,11 @@
 window.addEventListener('load', () => {
-    const marquee = document.getElementById('marquee');
-    if (!marquee) return;
+  const marquee = document.getElementById('marquee');
+  if (!marquee) return;
 
-    marquee.innerHTML += marquee.innerHTML;
+  const content = marquee.innerHTML;
+  marquee.innerHTML = content + content;
 
-    marquee.style.whiteSpace = 'nowrap';
-    marquee.style.display = 'inline-block';
-    marquee.style.overflow = 'hidden';
-    marquee.style.willChange = 'transform';
-
-    const parent = marquee.parentElement;
-    if (parent) {
-        parent.style.overflow = 'hidden';
-        parent.style.whiteSpace = 'nowrap';
-    }
-
-    let pos = 0;
-    const speed = 1; 
-
-    function tick() {
-        pos -= speed;
-
-        if (Math.abs(pos) >= marquee.scrollWidth / 2) {
-            pos = 0;
-        }
-
-        marquee.style.transform = `translateX(${pos}px)`;
-        requestAnimationFrame(tick);
-    }
-
-    tick();
+  marquee.style.width = marquee.scrollWidth + "px";
 });
 
         const menuBtn = document.getElementById('menu-btn');
