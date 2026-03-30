@@ -258,8 +258,10 @@
     }
 }
 
-.spacer {
-    height: clamp(40px, 5vw, 80px);
+@media (min-width: 1024px) {
+    .spacer {
+        height: clamp(5px, 0.625vw, 10px);
+    }
 }
 
 :root {
