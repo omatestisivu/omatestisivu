@@ -1,13 +1,3 @@
-window.addEventListener('load', () => {
-  const marquee = document.getElementById('marquee');
-  if (!marquee) return;
-
-  const content = marquee.innerHTML;
-  marquee.innerHTML = content + content;
-
-  marquee.style.width = marquee.scrollWidth + "px";
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const ctaImage = document.querySelector('.cta-image');
     
@@ -58,3 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 body.classList.remove('overflow-hidden');
             });
         });
+
+window.addEventListener('load', () => {
+  const marquee = document.getElementById('marquee');
+  if (!marquee) return;
+
+  const content = marquee.innerHTML;
+  marquee.innerHTML = content + content;
+
+  marquee.style.width = marquee.scrollWidth + "px";
+});
+
