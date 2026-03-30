@@ -1,46 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
     const ctaImage = document.querySelector('.cta-image');
-    
+
     if (ctaImage) {
-        ctaImage.addEventListener('error', function() {
+        ctaImage.addEventListener('error', function () {
             this.src = 'https://via.placeholder.com/600x400/1e293b/ffffff?text=Tuotekuva';
         });
     }
 
-    // Nappeiden klikkaustapahtumat (valinnainen)
     const btnPrimary = document.querySelector('.btn-primary');
     const btnSecondary = document.querySelector('.btn-secondary');
 
     if (btnPrimary) {
-        btnPrimary.addEventListener('click', function() {
+        btnPrimary.addEventListener('click', function () {
             console.log('Get Started -nappia klikattu');
-            // Lisää oma toiminnallisuus tähän
         });
     }
 
     if (btnSecondary) {
-        btnSecondary.addEventListener('click', function() {
+        btnSecondary.addEventListener('click', function () {
             console.log('Learn More -nappia klikattu');
-            // Lisää oma toiminnallisuus tähän
         });
     }
-});
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const body = document.body;
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const body = document.body;
+
+    if (menuBtn && mobileMenu) {
 
         menuBtn.addEventListener('click', () => {
-            // Animoi hampurilaiskuvake
             menuBtn.classList.toggle('open');
-            // Näytä/piilota valikko
             mobileMenu.classList.toggle('open');
-            // Estä scrollaus kun valikko on auki
             body.classList.toggle('overflow-hidden');
         });
 
-        // Sulje valikko jos linkkiä klikataan
         const navLinks = mobileMenu.querySelectorAll('a');
+
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuBtn.classList.remove('open');
@@ -48,14 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 body.classList.remove('overflow-hidden');
             });
         });
+    } else {
+        console.warn('Menu elementtejä ei löytynyt (#menu-btn tai #mobile-menu)');
+    }
 
-window.addEventListener('load', () => {
-  const marquee = document.getElementById('marquee');
-  if (!marquee) return;
+    const marquee = document.getElementById('marquee');
 
-  const content = marquee.innerHTML;
-  marquee.innerHTML = content + content;
+    if (marquee) {
+        const content = marquee.innerHTML;
+        marquee.innerHTML += content; // duplikoi sisältö
+        marquee.style.width = marquee.scrollWidth + "px";
+    }
 
-  marquee.style.width = marquee.scrollWidth + "px";
 });
-
