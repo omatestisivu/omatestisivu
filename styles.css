@@ -123,65 +123,6 @@
     align-items: center;
 }
 
-.nav-center {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-grow: 1;
-    align-items: center;
-}
-
-.nav-center a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-center a:hover {
-    color: #facc15;
-}
-
-.nav-center a.border {
-    border-radius: 9999px;
-    padding: 0.5rem 1rem;
-    border: 1px solid white;
-    transition: all 0.3s;
-}
-
-.nav-center a.border:hover {
-    background-color: white;
-    color: black;
-}
-
-.nav-right {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.nav-right a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-right a:hover {
-    color: #facc15;
-}
-
-.signup-btn {
-    padding: 0.5rem 1rem;
-    background-color: #FF8C00;
-    color: black;
-    border-radius: 9999px;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.signup-btn:hover {
-    background-color: #eab308;
-}
-
 .benefits-section {
     padding: 60px 20px;
     background-color: #ffffff;
@@ -750,13 +691,114 @@ details[open] summary {
         }
     }
 
+/* Hamburger lines */
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+#menu-btn.open .line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-btn.open .line-2 {
+    opacity: 0;
+}
+
+#menu-btn.open .line-3 {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile menu */
 #mobile-menu {
-    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background-color: #111;
     transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
 }
 
 #mobile-menu.open {
     transform: translateX(0);
+}
+
+/* Desktop nav center */
+.nav-center {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.nav-center a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-center a:hover {
+    color: #facc15;
+}
+
+.nav-center a.border {
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    transition: all 0.3s;
+}
+
+.nav-center a.border:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Desktop nav right */
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-right a:hover {
+    color: #facc15;
+}
+
+/* Signup button */
+.signup-btn {
+    padding: 0.5rem 1rem;
+    background-color: #FF8C00;
+    color: black;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+    background-color: #eab308;
+}
+
+/* Body scroll lock when menu open */
+.overflow-hidden {
+    overflow: hidden;
 }
 
 .hero-gradient {
@@ -764,22 +806,6 @@ details[open] summary {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.hamburger-line {
-    transition: all 0.3s ease-in-out;
-}
-
-.open .line-1 {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.open .line-2 {
-    opacity: 0;
-}
-
-.open .line-3 {
-    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .section-card {
