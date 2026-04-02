@@ -43,11 +43,13 @@
 
 <header class="fixed w-full top-0 z-50 bg-[#193158]/90 backdrop-blur-md border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    
+
+    <!-- Logo -->
     <a href="./" class="flex items-center transition-transform duration-200 hover:scale-105">
       <img src="becc71b6-6b5a-4b65-9ecb-e5a9995b89ea.png" alt="Logo" class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] object-contain">
     </a>
 
+    <!-- Desktop navigation -->
     <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-white/80">
       <a href="#" class="hover:text-white transition-colors">Etusivu</a>
       <a href="#" class="hover:text-white transition-colors">Ominaisuudet</a>
@@ -55,20 +57,34 @@
       <a href="#" class="hover:text-white transition-colors">Yhteys</a>
     </nav>
 
+    <!-- Desktop buttons -->
     <div class="hidden md:flex items-center gap-4">
       <button class="px-5 py-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">Log In</button>
       <button class="px-5 py-2 text-sm font-semibold bg-[#FF8C00] text-white rounded-full hover:bg-[#e67e00] transition-shadow shadow-lg">Sign Up</button>
     </div>
 
+    <!-- Hamburger button -->
     <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50">
-      <span class="w-6 h-0.5 bg-white rounded-full"></span>
-      <span class="w-6 h-0.5 bg-white rounded-full"></span>
-      <span class="w-6 h-0.5 bg-white rounded-full"></span>
+      <span class="line line-1 w-6 h-0.5 bg-white rounded-full"></span>
+      <span class="line line-2 w-6 h-0.5 bg-white rounded-full"></span>
+      <span class="line line-3 w-6 h-0.5 bg-white rounded-full"></span>
     </button>
 
   </div>
-</header>
 
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-4/5 bg-gray-900 transform translate-x-full transition-transform duration-300 z-40 md:hidden">
+    <ul class="flex flex-col p-8 space-y-6 text-white text-lg">
+      <li><a href="#" class="block">Etusivu</a></li>
+      <li><a href="#" class="block">Ominaisuudet</a></li>
+      <li><a href="#" class="block">Hinnasto</a></li>
+      <li><a href="#" class="block">Yhteys</a></li>
+      <li><button class="w-full mt-4 px-5 py-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">Log In</button></li>
+      <li><button class="w-full mt-2 px-5 py-2 text-sm font-semibold bg-[#FF8C00] text-white rounded-full hover:bg-[#e67e00] transition-shadow shadow-lg">Sign Up</button></li>
+    </ul>
+  </nav>
+</header>
+    
 <main class="relative pt-20 font-sans" style="font-family: 'Open Sans', sans-serif;">
   <section class="hero-gradient min-h-[85vh] flex items-center py-20 overflow-hidden relative">
     
