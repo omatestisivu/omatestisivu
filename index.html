@@ -69,49 +69,42 @@
   </div>
 </header>
 
-<main class="relative pt-20 font-sans" style="font-family: 'Open Sans', sans-serif;">
-  <section class="hero-gradient min-h-[85vh] flex items-center py-20 overflow-hidden relative">
+<section class="hero-gradient min-h-[85vh] flex items-center justify-center relative overflow-hidden py-20">
+  <!-- Taustaelementit -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+    <div class="absolute -top-20 -left-20 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-overlay filter blur-3xl"></div>
+  </div>
+
+  <!-- Hero sisältö -->
+  <div class="max-w-7xl mx-auto w-full px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-12 relative z-10">
     
-    <!-- Taustaelementit -->
-    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-      <div class="absolute -top-20 -left-20 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-10 right-10 w-64 h-64 bg-indigo-400 rounded-full mix-blend-overlay filter blur-3xl"></div>
+    <!-- Tekstisisältö -->
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <h1 class="text-5xl md:text-6xl leading-snug tracking-tight text-white">
+        Vie toimintasi <br>
+        <span class="text-white">seuraavalle tasolle.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 max-w-lg mx-auto md:mx-0 leading-relaxed">
+        ActionUp auttaa tiimejä hallitsemaan projekteja ja saavuttamaan tavoitteet nopeammin kuin koskaan aikaisemmin. Kokeile ilmaiseksi jo tänään.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+        <button class="px-8 py-4 bg-[#FF8C00] text-white font-normal rounded-2xl shadow-xl transition-transform transform hover:-translate-y-1">
+          Aloita nyt ilmaiseksi
+        </button>
+        <button class="px-8 py-4 border-2 border-white/30 text-white font-normal rounded-2xl hover:bg-white/10 transition-all backdrop-blur-sm">
+          Katso demo
+        </button>
+      </div>
     </div>
 
-    <!-- Hero sisältö -->
-    <div class="max-w-7xl mx-auto w-full px-6 flex flex-col md:flex-row items-center justify-center gap-12 relative z-10">
-      
-      <!-- Tekstisisältö -->
-      <div class="flex-1 text-center md:text-left space-y-6">
-        <h1 class="text-5xl md:text-6xl leading-snug tracking-tight text-white">
-          Vie toimintasi <br> 
-          <span class="text-white">seuraavalle tasolle.</span> 
-        </h1>
-        <p class="text-lg md:text-xl text-gray-200 max-w-lg leading-relaxed mx-auto md:mx-0">
-          ActionUp auttaa tiimejä hallitsemaan projekteja ja saavuttamaan tavoitteet nopeammin kuin koskaan aikaisemmin. Kokeile ilmaiseksi jo tänään.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-          <button class="px-8 py-4 bg-[#FF8C00] text-white font-normal rounded-2xl shadow-xl transition-transform transform hover:-translate-y-1">
-            Aloita nyt ilmaiseksi
-          </button>
-          <button class="px-8 py-4 border-2 border-white/30 text-white font-normal rounded-2xl hover:bg-white/10 transition-all backdrop-blur-sm">
-            Katso demo
-          </button>
-        </div>
-      </div>
-
-      <!-- Kuva -->
-      <div class="flex justify-center md:justify-end flex-1">
-        <img 
-          src="logo.png" 
-          alt="Logo" 
-          class="w-64 md:w-96 max-w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 transform hover:scale-105"
-        >
-      </div>
-
+    <!-- Kuva -->
+    <div class="flex justify-center md:justify-center flex-1">
+      <img src="logo.png" alt="Logo" class="w-64 md:w-96 max-w-full h-auto object-contain drop-shadow-2xl transition-transform duration-500 transform hover:scale-105">
     </div>
-  </section>
-</main>
+
+  </div>
+</section>
 
 <section class="py-20 overflow-hidden">
   
