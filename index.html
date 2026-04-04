@@ -41,49 +41,91 @@
 
 <body class="antialiased text-black font-sans bg-white">
 
-<header class="fixed w-full top-0 z-50 bg-[#193158]/90 backdrop-blur-md border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <nav class="fixed top-0 left-0 w-full z-40 bg-custom-blue border-b border-white/5 shadow-xl">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-20 flex justify-between items-center gap-2">
+            
+            <!-- Vasen Osa: Uusi Logo-elementti -->
+            <div class="flex-1 flex justify-start">
+                <a href="./" class="flex items-center transition-transform duration-200 hover:scale-105">
+                    <img src="becc71b6-6b5a-4b65-9ecb-e5a9995b89ea.png" alt="Logo" class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] object-contain">
+                </a>
+            </div>
 
-    <!-- Logo -->
-    <a href="./" class="flex items-center transition-transform duration-200 hover:scale-105">
-      <img src="becc71b6-6b5a-4b65-9ecb-e5a9995b89ea.png" alt="Logo" class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] object-contain">
-    </a>
+            <!-- Keskiosa: Symmetriset linkit (Piilotetaan mobiilissa ja tableteissa, näkyy vain LG:stä ylöspäin) -->
+            <div class="hidden lg:flex items-center justify-center space-x-8 xl:space-x-10">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors font-medium text-sm tracking-wide">Koti</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors font-medium text-sm tracking-wide">Palvelut</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors font-medium text-sm tracking-wide">Tietoa</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors font-medium text-sm tracking-wide">Yhteys</a>
+            </div>
 
-    <!-- Desktop navigation -->
-    <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-white/80">
-      <a href="#" class="hover:text-white transition-colors">Etusivu</a>
-      <a href="#" class="hover:text-white transition-colors">Ominaisuudet</a>
-      <a href="#" class="hover:text-white transition-colors">Hinnasto</a>
-      <a href="#" class="hover:text-white transition-colors">Yhteys</a>
+            <!-- Oikea Osa: Napit ja Valikko (Pidetään aina näkyvissä, mutta optimoidaan tila) -->
+            <div class="flex-1 flex justify-end items-center space-x-1 sm:space-x-4">
+                
+                <!-- Log in ja Sign up -->
+                <div class="flex items-center space-x-1 sm:space-x-3">
+                    <a href="#" class="text-slate-300 hover:text-white font-semibold text-[11px] sm:text-sm transition-colors px-2 py-2">
+                        Log in
+                    </a>
+                    <!-- Oranssi symmetrinen soikio -->
+                    <a href="#" class="bg-custom-orange nav-btn-hover text-white px-3 sm:px-6 py-2 rounded-full font-bold text-[11px] sm:text-sm tracking-tight shadow-lg shadow-orange-900/20 whitespace-nowrap">
+                        Sign up
+                    </a>
+                </div>
+
+                <!-- Erotusviiva (Pidetään symmetrisenä) -->
+                <div class="h-6 sm:h-8 w-[1px] bg-white/20 mx-1 sm:mx-2"></div>
+
+                <!-- Symmetrinen Valikkopainike -->
+                <button id="menu-btn" onclick="toggleMenu()" class="relative z-50 p-2 group focus:outline-none flex items-center justify-center" aria-label="Valikko">
+                    <div class="w-6 h-[14px] sm:w-7 sm:h-[18px] flex flex-col justify-between items-center">
+                        <span class="burger-line line1 w-full h-[2px] bg-white rounded-full"></span>
+                        <span class="burger-line line2 w-full h-[2px] bg-white rounded-full"></span>
+                        <span class="burger-line line3 w-full h-[2px] bg-white rounded-full"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- Desktop buttons -->
-    <div class="hidden md:flex items-center gap-4">
-      <button class="px-5 py-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">Log In</button>
-      <button class="px-5 py-2 text-sm font-semibold bg-[#FF8C00] text-white rounded-full hover:bg-[#e67e00] transition-shadow shadow-lg">Sign Up</button>
+    <!-- Taustan peite (Overlay) -->
+    <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-[#0f172a]/70 backdrop-blur-sm z-40"></div>
+
+    <!-- Sivulta aukeava valikko -->
+    <div id="side-menu" class="fixed top-0 right-0 w-[85%] sm:w-[450px] h-full bg-white z-50 shadow-[-20px_0_60px_-15px_rgba(0,0,0,0.3)] flex flex-col">
+        
+        <!-- Valikon yläpalkki sulkemispainikkeella -->
+        <div class="flex justify-end p-4 sm:p-6">
+            <button onclick="toggleMenu()" class="p-2 sm:p-3 hover:bg-slate-100 rounded-full transition-colors group" aria-label="Sulje valikko">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 sm:h-8 sm:w-8 text-slate-400 group-hover:text-slate-900 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="px-8 sm:px-16 flex-1 overflow-y-auto">
+            <p class="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] mb-8 sm:mb-10 opacity-50">Navigointi</p>
+            <nav class="flex flex-col space-y-5 sm:space-y-8 text-2xl sm:text-5xl font-bold text-slate-900">
+                <a href="#" class="menu-link block" style="transition-delay: 0.1s;"><span class="link-text">Etusivu</span></a>
+                <a href="#" class="menu-link block" style="transition-delay: 0.2s;"><span class="link-text">Palvelut</span></a>
+                <a href="#" class="menu-link block" style="transition-delay: 0.3s;"><span class="link-text">Meistä</span></a>
+                <a href="#" class="menu-link block" style="transition-delay: 0.4s;"><span class="link-text">Ura</span></a>
+                <a href="#" class="menu-link block" style="transition-delay: 0.5s;"><span class="link-text">Yhteystiedot</span></a>
+            </nav>
+        </div>
+
+        <div class="p-8 sm:p-16 border-t border-slate-100 menu-link" style="transition-delay: 0.6s;">
+            <div class="flex flex-col space-y-4 sm:space-y-6">
+                <div class="flex space-x-6 sm:space-x-8 text-slate-400 font-bold text-[10px] sm:text-xs uppercase tracking-widest">
+                    <a href="#" class="hover:text-blue-600 transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-blue-600 transition-colors">Instagram</a>
+                </div>
+                <div class="text-slate-400 text-[10px] sm:text-sm font-medium">
+                    &copy; 2024 Yritys Oy. Kaikki oikeudet pidätetään.
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Hamburger button -->
-    <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none z-50">
-      <span class="line line-1 w-6 h-0.5 bg-white rounded-full"></span>
-      <span class="line line-2 w-6 h-0.5 bg-white rounded-full"></span>
-      <span class="line line-3 w-6 h-0.5 bg-white rounded-full"></span>
-    </button>
-
-  </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-4/5 bg-gray-900 transform translate-x-full transition-transform duration-300 z-40 md:hidden">
-    <ul class="flex flex-col p-8 space-y-6 text-white text-lg">
-      <li><a href="#" class="block">Etusivu</a></li>
-      <li><a href="#" class="block">Ominaisuudet</a></li>
-      <li><a href="#" class="block">Hinnasto</a></li>
-      <li><a href="#" class="block">Yhteys</a></li>
-      <li><button class="w-full mt-4 px-5 py-2 text-sm font-semibold text-white/80 hover:text-white transition-colors">Log In</button></li>
-      <li><button class="w-full mt-2 px-5 py-2 text-sm font-semibold bg-[#FF8C00] text-white rounded-full hover:bg-[#e67e00] transition-shadow shadow-lg">Sign Up</button></li>
-    </ul>
-  </nav>
-</header>
     
 <main class="relative pt-20 font-sans" style="font-family: 'Open Sans', sans-serif;">
   <section class="hero-gradient min-h-[85vh] flex items-center py-20 overflow-hidden relative">
