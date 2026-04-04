@@ -1,55 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // =========================
-  // Mobiilivalikko
-  // =========================
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const body = document.body;
+    function toggleMenu() {
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const menuBtn = document.getElementById('menu-btn');
+        const body = document.body;
 
-  if (!menuBtn || !mobileMenu) {
-    console.warn('Menu elementtejä ei löytynyt (#menu-btn tai #mobile-menu)');
-  } else {
-    let touchHandled = false;
+        const isOpen = sideMenu.classList.toggle('open');
+        overlay.classList.toggle('active');
+        menuBtn.classList.toggle('open');
 
-    function toggleMenu(e) {
-      e.preventDefault();
-      menuBtn.classList.toggle('open');
-      mobileMenu.classList.toggle('translate-x-full');
-      mobileMenu.classList.toggle('translate-x-0');
-      body.classList.toggle('overflow-hidden');
+        body.style.overflow = isOpen ? 'hidden' : 'auto';
     }
 
-    menuBtn.addEventListener('touchstart', (e) => {
-      touchHandled = true;
-      toggleMenu(e);
+    const menuBtn = document.getElementById('menu-btn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMenu);
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const sideMenu = document.getElementById('side-menu');
+            if (sideMenu && sideMenu.classList.contains('open')) {
+                toggleMenu();
+            }
+        }
     });
 
-    menuBtn.addEventListener('click', (e) => {
-      if (!touchHandled) toggleMenu(e);
-      touchHandled = false;
-    });
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.addEventListener('click', toggleMenu);
+    }
 
-    // Sulje menu, kun linkkiä tai nappia klikataan
-    const navLinks = mobileMenu.querySelectorAll('a, button');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuBtn.classList.remove('open');
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.classList.remove('translate-x-0');
-        body.classList.remove('overflow-hidden');
-      });
-    });
-  }
-
-  // =========================
-  // Marquee
-  // =========================
-  const marquee = document.getElementById('marquee');
-  if (marquee) {
-    const content = marquee.innerHTML;
-    marquee.innerHTML += content; // duplikoi sisältö
-    marquee.style.width = marquee.scrollWidth + "px";
-  }
+    const marquee = document.getElementById('marquee');
+    if (marquee) {
+        const content = marquee.innerHTML;
+        marquee.innerHTML += content;
+        marquee.style.width = marquee.scrollWidth + "px";
+    }
 
 });
