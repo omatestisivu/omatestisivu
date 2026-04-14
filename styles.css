@@ -776,7 +776,7 @@ details[open] summary {
         }
 
 .hero-gradient {
-    background-color: #000000;
+    background: #000000 !important;
 }
 
 .section-card {
