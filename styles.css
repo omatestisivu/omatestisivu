@@ -776,10 +776,7 @@ details[open] summary {
         }
 
 .hero-gradient {
-    background-image: url('tausta.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #000000;
 }
 
 .section-card {
