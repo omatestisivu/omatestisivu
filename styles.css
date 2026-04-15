@@ -574,3 +574,51 @@ width: clamp(40px, 8vw, 64px);
 .section-card:hover .card-header {
     filter: brightness(1.1);
 }
+
+.nav-container {
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; 
+}
+
+@media (min-width: 1024px) {
+    .nav-container {
+        display: flex;
+    }
+}
+
+@media (min-width: 1280px) {
+    .nav-container {
+        gap: 2.5rem; 
+    }
+}
+
+.nav-link {
+    color: #cbd5e1;
+    font-weight: 600;
+    font-size: 0.875rem; 
+    letter-spacing: 0.025em; 
+    text-decoration: none;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    width: 0; 
+    height: 2px; 
+    background-color: #ffffff; 
+    transition: all 0.2s ease-in-out; 
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
