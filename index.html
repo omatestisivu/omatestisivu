@@ -41,7 +41,7 @@
 
 <body class="antialiased text-black font-sans bg-white">
 
-    <nav class="fixed top-0 left-0 w-full z-40 bg-custom-blue border-b border-white/5 shadow-xl">
+     <nav class="fixed top-0 left-0 w-full z-40 bg-custom-blue border-b border-white/5 shadow-xl">
         <div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-20 flex justify-between items-center gap-2">
 
             <div class="flex-1 flex justify-start">
@@ -81,6 +81,47 @@
             </div>
         </div>
     </nav>
+
+<div id="overlay"
+     class="fixed inset-0 bg-black/60 opacity-0 invisible transition duration-300 z-40"></div>
+
+<div id="mobile-menu"
+     class="fixed top-0 right-0 w-[82%] max-w-sm h-full bg-custom-blue z-50 transform translate-x-full shadow-2xl p-6">
+
+    <div class="flex justify-between items-center mb-10">
+
+        <img src="becc71b6-6b5a-4b65-9ecb-e5a9995b89ea.png"
+             class="w-28 object-contain">
+
+        <button onclick="toggleMenu()" class="text-white close-btn">
+            ×
+        </button>
+
+    </div>
+
+    <div class="mobile-box">
+
+        <a href="#" class="nav-link mobile-link">Koti</a>
+        <a href="#" class="nav-link mobile-link">Palvelut</a>
+        <a href="#" class="nav-link mobile-link">Tietoa</a>
+        <a href="#" class="nav-link mobile-link">Yhteys</a>
+
+    </div>
+
+    <div class="mt-12 border-t border-white/10 pt-6 flex flex-col items-center gap-4">
+
+        <a href="#" class="text-slate-300 font-semibold hover:text-white">
+            Log in
+        </a>
+
+        <a href="#"
+           class="bg-custom-orange text-white py-3 px-8 rounded-full font-bold w-full text-center">
+            Sign up
+        </a>
+
+    </div>
+
+</div>
     
 <main class="relative pt-20 font-sans" style="font-family: 'Open Sans', sans-serif;">
   <section class="hero-gradient min-h-[85vh] flex items-center py-20 overflow-hidden relative">
