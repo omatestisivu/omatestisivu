@@ -732,3 +732,13 @@ width: clamp(40px, 8vw, 64px);
 .nav-link:hover::after {
     width: 100%;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#prosessi, 
+#hyodyt, 
+#faq-container {
+  scroll-margin-top: 200px;
+}
