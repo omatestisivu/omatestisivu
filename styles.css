@@ -654,7 +654,7 @@ width: clamp(40px, 8vw, 64px);
     ),
     linear-gradient(
       90deg,
-      #10213f 0%,
+      #0f1d36 0%,
       #193158 40%,
       #2f62b8 100%
     );
@@ -664,7 +664,7 @@ width: clamp(40px, 8vw, 64px);
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.10);
   pointer-events: none;
 }
 
