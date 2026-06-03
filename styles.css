@@ -319,6 +319,12 @@
     }
   }
 
+@media (min-width: 1024px) {
+    .spacer {
+        height: clamp(5px, 0.625vw, 10px);
+    }
+}
+
 .cta-wrapper {
     display: block;
     width: 100%;
