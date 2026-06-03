@@ -220,115 +220,102 @@
     }
 }
 
-:root {
-  --brand-blue: #2563eb;
-  --brand-blue-dark: #1d4ed8;
-  --line-color: #e5e7eb;
+.prosessi-säiliö {
+  width: 100%;
+  max-width: 48rem;
+  margin: 2rem auto;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
 }
 
-.process-section {
-  background: #f9fafb;
-  padding: 60px 20px;
-  font-family: Arial, sans-serif;
+.prosessi-säiliö *, .prosessi-säiliö *::before, .prosessi-säiliö *::after {
+  box-sizing: inherit;
 }
 
-.process-container-inner {
-  max-width: 1000px;
-  margin: 0 auto;
+.prosessi-laatikko {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 60px;
+@media (min-width: 640px) {
+  .prosessi-laatikko {
+    padding: 3rem;
+  }
 }
 
-.header h2 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.header p {
-  margin-top: 10px;
-  color: #6b7280;
-}
-
-.process-container {
+.prosessi-kulku {
   position: relative;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .prosessi-kulku {
+    padding: 0 1.5rem;
+  }
+}
+
+.prosessi-viiva {
+  position: absolute;
+  top: 28px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 4px;
+  background-color: #00529c; 
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 640px) {
+  .prosessi-viiva {
+    top: 28px;
+  }
+}
+
+.prosessi-vaiheet {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.process-container::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: var(--line-color);
-  z-index: 0;
-}
-
-.step-item {
-  position: relative;
-  z-index: 1;
-  flex: 1;
+.prosessi-vaihe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
   text-align: center;
 }
 
-.step-circle {
-width: clamp(40px, 8vw, 64px);
-  background: var(--brand-blue);
-  color: #fff;
+.prosessi-pallo {
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border: 4px solid var(--brand-blue-dark);
-  outline: 4px solid #fff;
-}
-
-.step-content h3 {
-  font-size: 16px;
+  background-color: #00529c;
+  border: 2px solid #00529c;
+  color: #ffffff;
   font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 8px;
+  font-size: 1.125rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.step-content p {
-  font-size: 14px;
-  color: #6b7280;
-  line-height: 1.4;
+.prosessi-teksti {
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  word-break: break-word;
 }
 
-@media (max-width: 640px) {
-  .process-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .process-container::before {
-    top: 0;
-    bottom: 0;
-    left: 32px;
-    width: 2px;
-    height: 100%;
-  }
-
-  .step-item {
-    display: flex;
-    text-align: left;
-    gap: 20px;
-  }
-
-  .step-circle {
-    margin: 0;
-    flex-shrink: 0;
+@media (min-width: 640px) {
+  .prosessi-teksti {
+    font-size: 0.875rem;
   }
 }
 
