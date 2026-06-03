@@ -220,98 +220,123 @@
     }
 }
 
-.prosessi-säiliö {
-  width: 100%;
-  max-width: 48rem;
-  margin: 2rem auto;
-  font-family: system-ui, -apple-system, sans-serif !important; 
-  box-sizing: border-box;
-}
+  .prosessi-säiliö {
+    width: 100%;
+    max-width: 48rem; /* 768px */
+    margin: 2rem auto;
+    font-family: system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .prosessi-säiliö *, .prosessi-säiliö *::before, .prosessi-säiliö *::after {
+    box-sizing: inherit;
+  }
 
-.prosessi-säiliö *, .prosessi-säiliö *::before, .prosessi-säiliö *::after {
-  box-sizing: inherit;
-}
-
-.prosessi-laatikko {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 640px) {
   .prosessi-laatikko {
-    padding: 3rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   }
-}
 
-.prosessi-kulku {
-  position: relative;
-  padding: 0 0.5rem;
-}
+  @media (min-width: 640px) {
+    .prosessi-laatikko {
+      padding: 3rem;
+    }
+  }
 
-@media (min-width: 640px) {
+  .prosessi-otsikko-alue {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .prosessi-otsikko {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    .prosessi-otsikko {
+      font-size: 1.875rem;
+    }
+  }
+
   .prosessi-kulku {
-    padding: 0 1.5rem;
+    position: relative;
+    padding: 0 0.5rem;
   }
-}
 
-.prosessi-viiva {
-  position: absolute;
-  top: 1.75rem; 
-  left: 12.5%;
-  right: 12.5%;
-  height: 4px;
-  background-color: #00529c; 
-  z-index: 0;
-  transform: translateY(-50%);
-}
+  @media (min-width: 640px) {
+    .prosessi-kulku {
+      padding: 0 1.5rem;
+    }
+  }
 
-.prosessi-vaiheet {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+  /* Sininen viiva pallojen taustalla */
+  .prosessi-viiva {
+    position: absolute;
+    top: 28px; /* Pallon keskikohta mobiilissa (56px / 2) */
+    left: 12.5%;
+    right: 12.5%;
+    height: 4px;
+    background-color: #00529c; /* Suomen sininen */
+    z-index: 0;
+    transform: translateY(-50%);
+  }
 
-.prosessi-vaihe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  text-align: center;
-}
+  @media (min-width: 640px) {
+    .prosessi-viiva {
+      top: 28px; /* Tehty sopimaan myös isommalle pallolle */
+    }
+  }
 
-.prosessi-pallo {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #00529c;
-  border: 2px solid #00529c;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.125rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
+  .prosessi-vaiheet {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-.prosessi-teksti {
-  margin-top: 0.625rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #0f172a;
-  word-break: break-word;
-}
+  .prosessi-vaihe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    text-align: center;
+  }
 
-@media (min-width: 640px) {
+  .prosessi-pallo {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00529c;
+    border: 2px solid #00529c;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.125rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
   .prosessi-teksti {
-    font-size: 0.875rem;
+    margin-top: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0f172a;
+    word-break: break-word;
   }
-}
+
+  @media (min-width: 640px) {
+    .prosessi-teksti {
+      font-size: 0.875rem;
+    }
+  }
 
 .cta-wrapper {
     display: block;
