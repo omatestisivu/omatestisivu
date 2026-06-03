@@ -222,7 +222,7 @@
 
   .prosessi-säiliö {
     width: 100%;
-    max-width: 48rem; /* 768px */
+    max-width: 48rem; 
     margin: 2rem auto;
     font-family: system-ui, -apple-system, sans-serif;
     box-sizing: border-box;
@@ -257,21 +257,20 @@
     }
   }
 
-  /* Sininen viiva pallojen taustalla */
   .prosessi-viiva {
     position: absolute;
-    top: 28px; /* Pallon keskikohta mobiilissa (56px / 2) */
+    top: 28px; 
     left: 12.5%;
     right: 12.5%;
     height: 4px;
-    background-color: #00529c; /* Suomen sininen */
+    background-color: #00529c; 
     z-index: 0;
     transform: translateY(-50%);
   }
 
   @media (min-width: 640px) {
     .prosessi-viiva {
-      top: 28px; /* Tehty sopimaan myös isommalle pallolle */
+      top: 28px;
     }
   }
 
