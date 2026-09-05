@@ -41,46 +41,29 @@
 
 <body class="antialiased text-black font-sans bg-white">
 
-     <nav class="fixed top-0 left-0 w-full z-40 bg-custom-blue border-b border-white/5 shadow-xl">
-        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-20 flex justify-between items-center gap-2">
+<nav class="fixed top-0 left-0 w-full z-40 bg-custom-blue border-b border-white/5 shadow-xl">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 h-20 flex justify-between items-center gap-2">
+        
+        <div class="flex-1 flex justify-start">
+            <a href="./" class="flex items-center transition-transform duration-200 hover:scale-105">
+                <img src="becc71b6-6b5a-4b65-9ecb-e5a9995b89ea.png" alt="Logo" class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] object-contain">
+            </a>
+        </div>
 
-            <div class="flex-1 flex justify-start">
-                <a href="./" class="flex items-center transition-transform duration-200 hover:scale-105">
-                    <img src="becc71b6-6b5a-4b65-9ecb-e5a9995b89ea.png" alt="Logo" class="w-[120px] h-[120px] md:w-[150px] md:h-[150px] object-contain">
+        <div class="flex-1 flex justify-end items-center space-x-1 sm:space-x-4">
+            <div class="flex items-center space-x-1 sm:space-x-3">
+                <a href="#" class="text-slate-300 hover:text-white font-semibold text-[11px] sm:text-sm transition-colors px-2 py-2">
+                    Log in
+                </a>
+
+                <a href="#" class="bg-custom-orange nav-btn-hover text-white px-3 sm:px-6 py-2 rounded-full font-bold text-[11px] sm:text-sm tracking-tight shadow-lg shadow-orange-900/20 whitespace-nowrap">
+                    Sign up
                 </a>
             </div>
-
-            <div class="nav-container">
-    <a href="#prosessi" class="nav-link">Miten toimii</a>
-    <a href="#hyodyt" class="nav-link">Hyödyt</a>
-    <a href="#" class="nav-link">Hinnasto</a>
-    <a href="#faq-container" class="nav-link">UKK</a>
-            </div>
-
-            <div class="flex-1 flex justify-end items-center space-x-1 sm:space-x-4">
-
-                <div class="flex items-center space-x-1 sm:space-x-3">
-                    <a href="#" class="text-slate-300 hover:text-white font-semibold text-[11px] sm:text-sm transition-colors px-2 py-2">
-                        Log in
-                    </a>
-
-                    <a href="#" class="bg-custom-orange nav-btn-hover text-white px-3 sm:px-6 py-2 rounded-full font-bold text-[11px] sm:text-sm tracking-tight shadow-lg shadow-orange-900/20 whitespace-nowrap">
-                        Sign up
-                    </a>
-                </div>
-
-                <div class="h-6 sm:h-8 w-[1px] bg-white/20 mx-1 sm:mx-2"></div>
-
-                <button id="menu-btn" onclick="toggleMenu()" class="relative z-50 p-2 group focus:outline-none flex items-center justify-center" aria-label="Valikko">
-                    <div class="w-6 h-[14px] sm:w-7 sm:h-[18px] flex flex-col justify-between items-center">
-                        <span class="burger-line line1 w-full h-[2px] bg-white rounded-full"></span>
-                        <span class="burger-line line2 w-full h-[2px] bg-white rounded-full"></span>
-                        <span class="burger-line line3 w-full h-[2px] bg-white rounded-full"></span>
-                    </div>
-                </button>
-            </div>
         </div>
-    </nav>
+
+    </div>
+</nav>
 
 <div id="overlay"
      class="fixed inset-0 bg-black/60 opacity-0 invisible transition duration-300 z-40"></div>
